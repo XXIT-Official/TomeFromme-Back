@@ -1,6 +1,7 @@
 const mongoose = require('mongoose')
 
 const tomeSchema = new mongoose.Schema({
+    _id: mongoose.Schema.Types.ObjectId,
     letters: {
         type: Array,
         validate: {
