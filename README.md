@@ -36,7 +36,7 @@ app.get('/', (req, res) => res.send('Hello World!'))
 ## Installation
 ~~~
 npm install
-node app.js
+node index.js
 ~~~
 
 ## Heroku APP
