@@ -1,0 +1,5 @@
+{
+  "watch": ["index.js", "routes", "config", "models"],
+  "exec": "babel-node index.js",
+  "ext": "js json"
+}
