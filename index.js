@@ -1,22 +1,27 @@
-const express = require('express')
-const app = express()
-const port = 5000
-const bodyParser = require('body-parser')
-const mongoose = require('mongoose')
-const config = require('./config/key')
-const nodemailer = require('nodemailer')
+import express from 'express';
+import mongoose from 'mongoose';
+import config from './config/key';
 
-app.use(bodyParser.urlencoded({ extended: true }))
+const app = express();
+const port = 5000;
 
-app.use(bodyParser.json())
+app.use(express.json());
+app.use(
+  express.urlencoded({
+    extended: true,
+  }),
+);
 
-mongoose.connect(config.mongoURI, {
-    useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true, useFindAndModify: false
-}).then(() => console.log('MongoDB Connected...'))
-    .catch(err => console.log(err))
+mongoose
+  .connect(config.mongoURI, {
+    useNewUrlParser: true,
+    useUnifiedTopology: true,
+    useCreateIndex: true,
+    useFindAndModify: false,
+  })
+  .then(() => console.log('MongoDB Connected...'))
+  .catch(err => console.log(err));
 
+app.get('/', (req, res) => res.send('Hello World!'));
 
-app.get('/', (req, res) => res.send('Hello World!'))
-
-
-app.listen(port, () => console.log(`Server is running on PORT: ${port}`))
+app.listen(port, () => console.log(`Server is running on PORT: ${port}`));
