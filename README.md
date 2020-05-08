@@ -33,10 +33,10 @@ To me From me
 app.get('/', (req, res) => res.send('Hello World!'))
 ~~~
 
-## Installation
+## Installation & Start
 ~~~
-npm install
-node index.js
+$ npm install
+$ npm run dev
 ~~~
 
 ## Heroku APP
@@ -44,3 +44,5 @@ Not yet
 
 ## MADE
 © [MiryangJung](https://github.com/MiryangJung)
+
+© [SungheeLee](https://github.com/Sunghee2)
